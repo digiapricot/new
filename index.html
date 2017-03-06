@@ -1,402 +1,381 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Barrio" rel="stylesheet">
-    <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title> </title>
+    <title>DIGIAPRICOT</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     
- <style>
-     
-     *{
-         font-family: Arial;
-         box-sizing: border-box;
-     }
-/*     還原CSS設定值-------------*/
-     body,h1,h2,h3,h4,h5,h6,p,ul,li {
-         margin: 0;
-         padding: 0;
-     }
-     
-     .clearfix::after {
-         content:"";
-         display:block;
-         clear:both;
-     }
-     
-/*     滿版設置 -----------------*/     
-     .full-width {
-         width:100%;
-     }
-     .fixed-width {
-         width:1200px;
-         margin: auto;
-     }
-     
-/*    欄位設定 -----------------*/ 
-     
-     .col-3{
-         float:left;
-         width: 380px;
-         height: 380px;
-         margin: 50px 10px;
-         padding: 10px;
-         text-align:center;        
-     }
-     
-     .col-4{
-         float:left;
-         width: 280px;
-         height: 350px;
-         margin: 10px;
-         padding-bottom: 10px;
-         background-color: #EFEFEF;
-         
-     }
-/*    自訂開始 -----------------*/             
-        nav{
-            background-color: #333;
-            overflow: auto;
+    <style>
+        * {
+            font-family: "Roboto";
+            box-sizing: border-box;
         }
         
-        nav .logo{  
-            font-family: 'Rock Salt', cursive;
-            color: #ffffff;
-            font-size: 30px;
-            line-height: 55px;
-            margin: 20px 50px;
-            float:left;
-        }
-        
-       nav .menu {
-            float:right;
-        }
-
-       nav .menu ul {   /*ul本身就有內距，一定要取消掉 */
+        body,h1,h2,h3,h4,h5, h6,p {
             margin: 0;
-            padding: 0;  
+            padding: 0;
         }
         
-       nav .menu ul li{
-          	float: left;
-            list-style: none; 
-            /*  argin: 0 15px;  */
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
         }
         
-        nav .menu ul li a{
-            color: #FFFFFF;
-            line-height: 100px;
+        .full-width {
+            width: 100%;
+        }
+        
+        .fixed-width {
+            width: 1200px;
+            margin: auto;
+        }
+        
+        .col-3 {
+            float: left;
+            width: 380px;
+            margin-left: 10px;
+            margin-right: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        
+        .col-4 {
+            float: left;
+            width: 280px;
+            margin-left: 10px;
+            margin-right: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        
+        nav {
+            height: 45px;
+            background-color: #000;
+        }
+        
+        nav .logo {
+            float: left;
+            color: aliceblue;
+            line-height: 45px;
+        }
+        
+        nav .menu {
+            float: right;
+        }
+        
+        nav .menu ul {
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav .menu li {
+            float: left;
+            list-style: none;
+        }
+        
+        nav .menu a {
+            color: #fff;
             text-decoration: none;
+            display: block;
+            line-height: 45px;
+            padding-left: 15px;
+            padding-right: 15px;
+            font-size: 14px;
+            transition: all .3s;
+        }
+        
+        nav .menu a:hover {
+            background-color: #555;
+        }
+        
+        header {
+            height: 750px;
+            background-image: url(images/b001.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            display: table;
+        }
+        
+        header .overlay {
+            height: 750px;
+            background-color: rgba(0, 0, 0, .4);
+            display: table-cell;
             vertical-align: middle;
-            display:block;
-            padding: 0 30px;
-            transition: all .3s
+        }
+        
+        header .content {
+            color: #fff;
+            /*            width: 400px;*/
+            margin: auto;
+            text-align: center;
+        }
+        
+        header .content h1 {
+            font-size: 120px;
+        }
+        
+        header .content a {
+            display: inline-block;
+            width: 160px;
+            color: #fff;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            background-color: #ff004e;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+        #about {
+            padding-top: 100px;
+            padding-bottom: 100px;
+            text-align: center;
+        }
+        #about h2 {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        #about .col-3 {
+            padding-top: 70px;
             
         }
-
-        nav .menu ul li a:hover{
-            color: #00f5ff;
-        } 
+        #about .col-3 h3 {
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+        #about .col-3 p {
+            line-height: 2em;
+            opacity: .8;
+        }
+        #works {
+            padding-top: 100px;
+            padding-bottom: 100px;
+            background-color:darkslategrey;
+            color: #fff;
+            text-align: center;
+        }
+        #works .col-3 {
+            height: 380px;
+            background-color: cornsilk;
+        }
+/*
+        #works h2 {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+*/
+        #works p {
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+        #service {
+            padding-top: 100px;
+            padding-bottom: 100px;
+            text-align: center;
+        }
+        #service p {
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+        #service .gallery {
+            overflow: hidden;
+            height: 280px;
+        }
+        #service img {
+            width: 150%;
+        }
+        #service .col-4 p {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            opacity: .8;
+        }
+        #service .col-4 h4 {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        #service .col-4 .social a {
+            text-decoration: none;
+            color: #000;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
         
-     header {
-        height:600px;
-        background-repeat: no-repeat;
-        background-image: url(img/b001.jpg);
-        background-attachment: fixed;
-        background-size: cover;
-        display: table;
-       }
-     
-     header .overlay{
-         height: 600px;
-         background-color: rgba(0, 0, 0, 0.4);
-         display:table-cell;
-         vertical-align: middle;
-         
-     }
-     
-     header .content{
-         color: aliceblue;
-/*       width: 400px;*/
-         margin: auto;
-         text-align: center;
-     }
-     
-     header .content h1 {
-         font-size: 90px;
-     }
-    
-
-     header .content a {
-         display :inline-block;  /* 用block 還要另外置設立margin  */
-         width: 160px;
-         color: aliceblue;
-         margin: 20px;
-         padding: 15px;
-         background-color: rgba(255, 255, 255, 0.38);
-         text-decoration: none;
-         transition: all .3s;
-         border :1px solid #d0d0d0;
-         border-radius: 5px;
-     }
-
-    header .content a:hover {
-         background-color: #ffffff;
-         color: #005b76;
-         border :1px solid #FFF;
-
-     }
-     #about{
-         padding: 50px ;
-         text-align:center;
-     } 
-      #about .col-3 {
-         padding-top: 70px;
-     }
-     
-     #about .col-3 h2{
-         margin: 20px 0;
-     }
-    #about .col-3 p{
-         line-height: 2em;   /* 用比例拉距離*/
-         opacity: .7;        /* 透明度設定*/
-     }
-     
-    #about .icon{
-        line-height: 100px;
-        width: 80px;
-        height: 80px;
-        background-color: #dedede;
-        border-radius:40px;
-     }
-
-     
-     #works {
-        color: #FFF; 
-        background-color: black;
-        padding: 100px 0;
-        text-align: center;
-     }
-     
-     #works .col-3{
-         color: #FFF;
+        footer {
+            padding: 30px 0 30px 0;
+            background-color: #333;
+            color: #eee;
+        }
         
-     }
-     
-     #works h2{
-         margin: 20px 0;
-     }
-     
-     #works p {
-         line-height: 2em;
-     }
-     
-     #works img{
-         width: 350px;
-         height: 200px;
-     }
-     
-     #product{
-         background: #EFEFEF;
-         padding-top: 50px;
-         padding-bottom: 100px;
-         text-align:center;
-     }
-     #product .col-4{
-         height:550px;
-     }   
-     
-     #product h1 {
-        color: darkblue;
-        font-size: 20px;
-        font-family: 'Barrio', cursive; 
-        margin: 30px 0;
-     }   
-     
-      #product h2{
-         margin: 20px 0;
-     }
-     
-     #product h3{
-     margin: 20px 0;
-     }
-     
-      #product .photo {
-         width: 250px;
-         height: 350px;
-         overflow: hidden;
-     }     
-      #product p {
-         line-height: 2em;
-         opacity: .5; 
-     }
-         
-     #product li {
-         margin: 0 10px;
-         display: inline;
-     }
-     
-     #Contact{
-         padding: 50px ;
-         height: 600px;
-         text-align:center;
-     }
-    </style>    
+        footer a {
+            color: #eee;
+            text-align: center;
+            margin-left: 30px;
+            text-decoration: none;
+        }
+        
+        footer .copyright{
+            float: left;
+            margin-left: 50px;
+        }
+        footer .sns{
+            float:right;
+        }
+    </style>
 </head>
 
 <body>
-
-      <nav  class="full-width">
-        <div  class="fixed-width">
-          <div class="logo">RWD</div>
-          <div class="menu">
-             <ul>
-               <li><a href="#">About</a></li>
-               <li><a href="#">Product</a></li>
-               <li><a href="#">Works</a></li>
-               <li><a href="#">Link</a></li>
-               <li><a href="#">Contact</a></li>
-             </ul>     
-          </div>  
-         </div>    
-      </nav>
-      
-      <header class="full-width">
-          <div class="overlay">
-            <div class="content">
-            
-               <h1>DESIGN</h1> 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>Aspernatur incidunt repudiandae fugit quibusdam veniam obcaecati eius voluptatibus magni quaerat ea,<br>quam sint sunt deleniti, doloribus vel qui similique tenetur consequatur!
-                </p>
-             
-             <a href="#">LINK</a>
-             </div>  
-              
-          </div>
-          
-      </header>
-      
-      <div id="about" class="full-width clearfix">
-          
-             <div class="fixed-width">
-             
-        
-              <h2>About us</h2>
-             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis id in ea exercitationem ipsa laborum sed, necessitatibus saepe amet! </p>
-             
-             
-             <div class="col-3">
-              <div class="icon"><span class="fa fa-map  fa-3x "></span></div>
-              <h2>MAP</h2>
-             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis id in ea exercitationem ipsa laborum sed, necessitatibus saepe amet! Laborum deserunt, similique accusantium unde iure vel praesentium, hic culpa suscipit.</p>
-             </div>
-                         
-             <div class="col-3">
-              <div class="icon"><span class="fa fa-map-signs  fa-3x "></span></div>
-              <h2>SIGNS</h2>
-             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis id in ea exercitationem ipsa laborum sed, necessitatibus saepe amet! Laborum deserunt, similique accusantium unde iure vel praesentium, hic culpa suscipit.</p>
-             </div>
-             
-             <div class="col-3">
-              <div class="icon"><span class="fa fa-paw  fa-3x "></span></div>
-              <h2>PAW</h2>
-             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis id in ea exercitationem ipsa laborum sed, necessitatibus saepe amet! Laborum deserunt, similique accusantium unde iure vel praesentium, hic culpa suscipit.</p>
-             </div>
-             
-          </div>
-      </div>
-   <div id="works" class="full-width clearfix">
-      
-       <div  class="fixed-width">
-             <h2>Works</h2>
-             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis id in ea exercitationem ipsa laborum sed, necessitatibus saepe amet! </p>
-             
-            <div class="col-3">
-              <a href="#"><img src="img/work-01.jpg" alt=""></a>
-              <p>Lorem ipsum dolor sit amet</p>
-             </div>
-             
-              <div class="col-3">
-              <a href="#"><img src="img/work-02.jpg" alt=""></a>
-             <p>Lorem ipsum dolor sit amet</p>
-             </div>
-             
-              <div class="col-3">
-              <a href="#"><img src="img/work-03.jpg" alt=""></a>
-             <p>Lorem ipsum dolor sit amet</p>
-             </div>
-          
-       </div>      
-   </div> 
-   
-  <div id="product" class="full-width clearfix">
-      <div  class="fixed-width">
-              <h2>Product</h2>
-             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis id in ea exercitationem ipsa laborum sed, necessitatibus saepe amet! </p>
-             
-            <div class="col-4">
-             <div class="photo"><a href="#"><img src="img/001s.jpg" alt=""></a></div>
-             <h1>Minions</h1>
-             <h3>Lorem ipsum dolor sit amet</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis id in ea exercitationem ipsa laborum sed, necessitatibus saepe amet! </p>
-              <ul>
-                  <li><span class="fa fa-facebook-official "  ></span></li>
-                  <li><span class="fa fa-pinterest" ></span></li>
-                  <li><span class="fa fa-reddit-alien" ></span></li>
-                  <li><span class="fa fa-twitter" ></span></li>
-              </ul>
-             </div>
-             
-              <div class="col-4">
-             <div class="photo"><a href="#"><img src="img/002s.jpg" alt=""></a></div>
-             <h1>Minions</h1>
-             <h3>Lorem ipsum dolor sit amet</h3>
-             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis id in ea exercitationem ipsa laborum sed, necessitatibus saepe amet!</p>
-              <ul>
-                  <li><span class="fa fa-facebook-official"  ></span></li>
-                  <li><span class="fa fa-pinterest" ></span></li>
-                  <li><span class="fa fa-reddit-alien" ></span></li>
-                  <li><span class="fa fa-twitter" ></span></li>
-              </ul>
-             </div>
-             
-              <div class="col-4">
-             <div class="photo"><a href="#"><img src="img/003s.jpg" alt=""></a></div>
-             <h1>Minions</h1>
-             <h3>Lorem ipsum dolor sit amet</h3>
-             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis id in ea exercitationem ipsa laborum sed, necessitatibus saepe amet!</p>
-              <ul>
-                  <li><span class="fa fa-facebook-official"  ></span></li>
-                  <li><span class="fa fa-pinterest" ></span></li>
-                  <li><span class="fa fa-reddit-alien" ></span></li>
-                  <li><span class="fa fa-twitter" ></span></li>
-              </ul>
-             </div> 
-                 
-              <div class="col-4">
-             <div class="photo"><a href="#"><img src="img/004s.jpg" alt=""></a></div>
-             <h1>Minions</h1>
-             <h3>Lorem ipsum dolor sit amet</h3>
-             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis id in ea exercitationem ipsa laborum sed, necessitatibus saepe amet!</p>
-              <ul>
-                  <li><span class="fa fa-facebook-official"  ></span></li>
-                  <li><span class="fa fa-pinterest" ></span></li>
-                  <li><span class="fa fa-reddit-alien" ></span></li>
-                  <li><span class="fa fa-twitter" ></span></li>
-              </ul>
-             </div>    
-      </div>
-         
-  </div>
-  
- <div id="Contact" class="full-width clearfix">
-      <div  class="fixed-width">
-             <h1>Contact</h1>
-             <h3>Lorem ipsum dolor sit amet</h3>
+    <nav class="full-width">
+        <div class="fixed-width">
+            <div class="logo">LOGO</div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Works</a></li>
+                    <li><a href="#">Service</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
         </div>
- </div>
+    </nav>
+    <header class="full-width">
+        <div class="overlay">
+            <div class="content">
+                <h1>DESIGN</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    <br> Tempora ipsum sapiente reprehenderit, libero vitae ut assumenda esse.
+                </p>
+                <a href="#">GET STARTED</a>
+            </div>
+        </div>
+    </header>
+    <div id="about" class="full-width clearfix">
+        <div class="fixed-width">
+            <h2>About us</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus deserunt non adipisci doloremque impedit ipsa aliquam.
+            </p>
+            <div class="col-3">
+                <div class="icon"><span class="fa fa-camera-retro fa-4x"></span></div>
+                <h3>QWERTy</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate illum nisi repellendus doloremque.
+                </p>
+            </div>
+            <div class="col-3">
+                <div class="icon"><span class="fa fa-bolt fa-4x"></span></div>
+                <h3>ASDF</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate illum nisi repellendus doloremque.
+                </p>
+            </div>
+            <div class="col-3">
+                <div class="icon"><span class="fa fa-gavel fa-4x"></span></div>
+                <h3>POIUY</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate illum nisi repellendus doloremque.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="works" class="full-width clearfix">
+        <div class="fixed-width">
+            <h2>WORKS</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae at, voluptatibus quo. 
+            </p>
+            <div class="col-3">
+                <img src="" alt="">
+            </div>
+            <div class="col-3">
+                <img src="" alt="">
+            </div>
+            <div class="col-3">
+                <img src="" alt="">
+            </div>
+        </div>
+    </div>
+    <div id="service" class="full-width clearfix">
+        <div class="fixed-width">
+            <h2>SERVICE</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae at, voluptatibus quo. 
+            </p>
+            <div class="col-4">
+                <div class="gallery"><img src="images/002.jpg" alt=""></div>
+                <h4>Banana</h4>
+                <div>CEO</div>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores obcaecati.
+                </p>
+                <div class="social">
+                    <a href="#"class="fa fa-facebook fa-lg"></a>
+                    <a href="#"class="fa fa-instagram fa-lg"></a>
+                    <a href="#"class="fa fa-twitter fa-lg"></a>
+                    <a href="#"class="fa fa-github fa-lg"></a>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="gallery"><img src="images/003.jpg" alt=""></div>
+                <h4>Banana</h4>
+                <div>CEO</div>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores obcaecati.
+                </p>
+                <div class="social">
+                    <a href="#"class="fa fa-facebook fa-lg"></a>
+                    <a href="#"class="fa fa-instagram fa-lg"></a>
+                    <a href="#"class="fa fa-twitter fa-lg"></a>
+                    <a href="#"class="fa fa-github fa-lg"></a>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="gallery"><img src="images/004.jpg" alt=""></div>
+                <h4>Banana</h4>
+                <div>CEO</div>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores obcaecati.
+                </p>
+                <div class="social">
+                    <a href="#"class="fa fa-facebook fa-lg"></a>
+                    <a href="#"class="fa fa-instagram fa-lg"></a>
+                    <a href="#"class="fa fa-twitter fa-lg"></a>
+                    <a href="#"class="fa fa-github fa-lg"></a>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="gallery"><img src="images/002.jpg" alt=""></div>
+                <h4>Banana</h4>
+                <div>CEO</div>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores obcaecati.
+                </p>
+                <div class="social">
+                    <a href="#"class="fa fa-facebook fa-lg"></a>
+                    <a href="#"class="fa fa-instagram fa-lg"></a>
+                    <a href="#"class="fa fa-twitter fa-lg"></a>
+                    <a href="#"class="fa fa-github fa-lg"></a>
+                </div>
+            </div>
+         
+        </div>
+    </div>
+    
+    <footer class="full-width clearfix">
+        <div class="fixed-width">
+           <div class="copyrights">DIGIAPRICOT &copy; 2017 </div>
+           <div class="sns">
+                    <a href="#"class="fa fa-facebook fa-lg"></a>
+                    <a href="#"class="fa fa-instagram fa-lg"></a>
+                    <a href="#"class="fa fa-twitter fa-lg"></a>
+                    <a href="#"class="fa fa-github fa-lg"></a> </div>
+        </div>
         
+    </footer>
+    
 </body>
+
 </html>
